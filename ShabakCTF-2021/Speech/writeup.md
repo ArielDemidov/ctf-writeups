@@ -121,5 +121,5 @@ As the challenge said, we got a 10 word sentence.
 
 Unfortunately, I did 3 tries with the translated text with different formatting. So, before wasting my last attempts, I looked up the phrase really quick and discovered that google translate added a plural "s" on the word "heavens". I should've foreseen the typical google translate errors.. 
 
-### Flag
+### Flag 
 >In the beginning God created the heaven and the earth
