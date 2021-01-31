@@ -14,11 +14,11 @@
 >
 >*Note: the attached image is meant only for illustration purposes; to solve the problem, you should only use the attached binary Spectogram file*
 >
->[Speech_image.png](Speech_image.png) | [Speech.txt](Speech.txt)
+>[Speech_image.png](files/Speech_image.png) | [Speech.txt](files/Speech.txt)
 
 ### Solution
 
-First, lets reconstruct a spectrogram from the given [numpy array](Speech.txt) via the following [script](spectrogram_plot.py):
+First, lets reconstruct a spectrogram from the given [numpy array](files/Speech.txt) via the following [script](files/spectrogram_plot.py):
 
 Note: You have to run it with Jupyter (I personally ran it from VS Code with all the necessities installed)
 ```python
@@ -57,9 +57,9 @@ exit()
 # %%
 ```
 We get the following image:
-![](spectrogram_matplotlib.png)
+![](files/spectrogram_matplotlib.png)
 
-We can see that its very similar, if not the same, to the [Speech_image.png](Speech_image.png) file. So Im going to use the given [Speech_image.png](Speech_image.png) from now on just because it has the correct scale (where as in my image I guessed the scale from reading the numpy array briefly).
+We can see that its very similar, if not the same, to the [Speech_image.png](files/Speech_image.png) file. So Im going to use the given [Speech_image.png](files/Speech_image.png) from now on just because it has the correct scale (where as in my image I guessed the scale from reading the numpy array briefly).
 
 After doing some short research on how to extract audio from a spectrogram I came to the following program: [Photosounder](https://photosounder.com/)
 
@@ -67,17 +67,17 @@ It basically synthesizes audio from images and the spectrogram is an image repre
 
 Everything we need can be done in the free demo version so thats why I went with that program.
 
-So, after opening Photosounder, we can then import the spectrogram (after [cropping](spectrogram_cropped.jpg) it ofc) and firstly, lower the gamma knob - which is a threshold for the colormap - lowering it to around '7.0:1' should do the trick:
+So, after opening Photosounder, we can then import the spectrogram (after [cropping](files/spectrogram_cropped.jpg) it ofc) and firstly, lower the gamma knob - which is a threshold for the colormap - lowering it to around '7.0:1' should do the trick:
 
-[![](photosounder_initial_load.png)](photosounder_initial_load.png "Click the image to open it in full scale")
+[![](photosounder_initial_load.png)](files/photosounder_initial_load.png "Click the image to open it in full scale")
 <sub><sup>*Click the image to open it in full scale*</sub></sup>
 
 After pressing the play button we can hear something that resembles a monster spawned straight out of the shadow realm:
-[**Audio**](initial_load_audio.wav)
+[**Audio**](files/initial_load_audio.wav)
 
 So that means that we have to guess the correct frequencies in order to get something that resembles a human speaking mongolian.
 
-After some time learning the program and playing with the knobs I gathered that the [following settings](photosounder_best_settings.jpg) provide the clearest audio: [**Mongolian Audio**](mongolian_audio.aiff)
+After some time learning the program and playing with the knobs I gathered that the [following settings](files/photosounder_best_settings.jpg) provide the clearest audio: [**Mongolian Audio**](files/mongolian_audio.aiff)
 
 * Minimum Freq: 6.0 
 * Maximum Freq: 8000
@@ -85,7 +85,7 @@ After some time learning the program and playing with the knobs I gathered that 
 * pixels/seconds (Time resolution): 363
 * Gamma: 6.9 <sub><sup><sup>nice</sub></sup></sup>
 
-Now, all we have to do is to [speech recognize it!](mongolian_tts.py)
+Now, all we have to do is to [speech recognize it!](files/mongolian_tts.py)
 
 ```python
 # ShabakCTF@2021 
@@ -109,13 +109,13 @@ print(response['alternative'][0]['transcript'])
 
 # Unfortunately, implemanting a translator was too much work so just paste in google translate :)
 ```
-![](mongolian_text.png)
+![](files/mongolian_text.png)
 
 Pasting the following text into google translate should be easy peasy!
 
 > эхэнд бурхан тэнгэр газрыг бүтээжээ
 
-![](mongolian_translated.png)
+![](files/mongolian_translated.png)
 
 As the challenge said, we got a 10 word sentence.
 
