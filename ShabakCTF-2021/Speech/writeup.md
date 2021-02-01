@@ -58,9 +58,13 @@ exit()
 ```
 We get the following image:
 
-![](files/spectrogram_matplotlib.png)
+![files/spectrogram_matplotlib.png](files/spectrogram_matplotlib.png)
 
-We can see that its very similar, if not the same, to the [Speech_image.png](files/Speech_image.png) file. So Im going to use the given [Speech_image.png](files/Speech_image.png) from now on just because it has the correct scale (where as in my image I guessed the scale from reading the numpy array briefly).
+We can see that its very similar, if not the same, to the [Speech_image.png](files/Speech_image.png) file:
+
+![files/Speech_image.png](files/Speech_image.png)
+
+So Im going to use the given [Speech_image.png](files/Speech_image.png) from now on just because it has the correct scale (where as in my image I guessed the scale from reading the numpy array briefly).
 
 After doing some short research on how to extract audio from a spectrogram I came to the following program: [Photosounder](https://photosounder.com/)
 
@@ -70,7 +74,7 @@ Everything we need can be done in the free demo version so thats why I went with
 
 So, after opening Photosounder, we can then import the spectrogram (after [cropping](files/spectrogram_cropped.jpg) it ofc) and firstly, lower the gamma knob - which is a threshold for the colormap - lowering it to around '7.0:1' should do the trick:
 
-[![why isn't the image showing up ;(](photosounder_initial_load.png)](files/photosounder_initial_load.png "Click the image to open it in full scale")
+[![If the image isnt showing up click me](photosounder_initial_load.png)](files/photosounder_initial_load.png "Click the image to open it in full scale")
 <sub><sup>*Click the image to open it in full scale*</sub></sup>
 
 After pressing the play button we can hear something that resembles a monster spawned straight out of the shadow realm:
