@@ -57,6 +57,7 @@ exit()
 # %%
 ```
 We get the following image:
+
 ![](files/spectrogram_matplotlib.png)
 
 We can see that its very similar, if not the same, to the [Speech_image.png](files/Speech_image.png) file. So Im going to use the given [Speech_image.png](files/Speech_image.png) from now on just because it has the correct scale (where as in my image I guessed the scale from reading the numpy array briefly).
