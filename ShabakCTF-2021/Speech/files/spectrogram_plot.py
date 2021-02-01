@@ -25,7 +25,7 @@ data = np.fromfile("Speech_without_header.txt", dtype='<f4').reshape(138,80)
 plot.imshow(np.transpose(data), extent=[0,138,0,80], cmap='plasma',
            vmin=-5, vmax=2, origin='lowest', aspect='auto')
 plot.colorbar()
-plot.savefig("spectrogram_matplotlib.png", dpi=2000)
+plot.savefig("spectrogram_matplotlib.png")
 plot.show()
 
 exit()
