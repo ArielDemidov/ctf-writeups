@@ -1,0 +1,26 @@
+------------------------------------------------------------------------- The challenge said that one of the files on the machine was granted a capability in the permitted capability set, lets check what it is:
+
+student@localhost:~$ getcap -r / 2>/dev/null
+/usr/bin/python2.7 = cap_sys_admin+ep
+
+------------------------------------------------------------------------- Awesome! after a small research we find the following: 
+https://book.hacktricks.xyz/linux-unix/privilege-escalation/linux-capabilities#cap_sys_admin
+we follow the example:
+
+doco1.png
+
+------------------------------------------------------------------------- Now for the 2nd part of the example: 
+
+doco2.png
+
+doco3.png
+
+------------------------------------------------------------------------- The patch worked! lets su in 
+
+doco4.png
+
+------------------------------------------------------------------------- Now for the usual..
+
+doco5.png
+
+e924a4b4582ac552210338bbb0fdc9ce

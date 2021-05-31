@@ -1,0 +1,5 @@
+Attacking Containers (Points: 200)
+
+As an attacker, you have exploited the web application running on the Docker container to achieve command execution. And, as the web server was running as root, you currently have the root user on the container. This container is running with excessive privileges.
+
+Objective: Break out of the container and retrieve the flag kept in the root directory of the Docker host system!

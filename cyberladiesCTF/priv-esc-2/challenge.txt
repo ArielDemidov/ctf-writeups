@@ -1,0 +1,5 @@
+Privilege Escalation II (Points: 300)
+
+One of the files on the machine was granted a capability in the permitted capability set.
+
+Objective: By leveraging the capability provided to the file, escalate to root and retrieve the flag!

